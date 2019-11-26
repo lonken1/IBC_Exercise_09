@@ -12,7 +12,10 @@ library(reshape2)
 # Load in file
 weightheight <- read.csv("weight-height.csv", header = T)
 
+# Make ggplot with height and weight
 graph <- ggplot(data=weightheight, aes(x=Height,y=Weight))
+
+# Makes the scatter plot
 graph+geom_point()+theme_classic()+stat_smooth(method = 'lm')+xlab("Height (in)")+ylab("Weight (lb)")
 
 # PROBLEM 2
@@ -28,3 +31,4 @@ b+stat_summary(fun.y="mean", geom="bar")
 c <- ggplot(data=data,aes(x=region,y=observations))
 #jitter version of scatterplot
 c+geom_jitter()
+
