@@ -13,6 +13,18 @@ library(reshape2)
 weightheight <- read.csv("weight-height.csv", header = T)
 
 graph <- ggplot(data=weightheight, aes(x=Height,y=Weight))
-graph+geom_point()+theme_classic()+stat_smooth(method = 'lm')
+graph+geom_point()+theme_classic()+stat_smooth(method = 'lm')+xlab("Height (in)")+ylab("Weight (lb)")
 
+# PROBLEM 2
+#load in file
+data <- read.table("data.txt",header=TRUE,sep=",")
+#create ggplot for data with regions as the x and observations as the y
+b <- ggplot(data=data,aes(x=region,y=observations))
+#create bar graph of the means for each region
+b+stat_summary(fun.y="mean", geom="bar")
 
+#scatter plot of all observations
+#ggplot of data 
+c <- ggplot(data=data,aes(x=region,y=observations))
+#jitter version of scatterplot
+c+geom_jitter()
