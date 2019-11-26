@@ -15,3 +15,4 @@ weightheight <- read.csv("weight-height.csv", header = T)
 graph <- ggplot(data=weightheight, aes(x=Height,y=Weight))
 graph+geom_point()+theme_classic()+stat_smooth(method = 'lm')
 
+
