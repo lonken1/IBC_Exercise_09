@@ -31,4 +31,13 @@ b+stat_summary(fun.y="mean", geom="bar")
 c <- ggplot(data=data,aes(x=region,y=observations))
 #jitter version of scatterplot
 c+geom_jitter()
+#other version of scatterplot
+c+geom_point(alpha=0.05)
 
+#bar vs. scatterplot
+#the bar graph gives the means for each region, while the scatter plot gives the distribution of all the points in each region
+#this is important because the means are all relatively equal, but the distributions are not very similar
+#for example, the southern region has two clearly separate distributions
+#and some distributions are much narrower than others (ex: north region has a narrow distribution)
+#adding error bars to the bar graph for means would help depict the spread of the distributions
+  # (but would not fix the issue of the south region have two distributions)
